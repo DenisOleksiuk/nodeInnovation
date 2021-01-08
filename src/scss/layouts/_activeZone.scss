@@ -1,0 +1,17 @@
+.active-zone {
+  @include flex(row, flex-start, flex-end);
+  background-color: rgb(151, 140, 190);
+  height: calc(100vh - 32rem); // 32rem = 10rem header + 22rem hand
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 100%; // 20% for aside
+}
+
+.active-zone__stack {
+  @include flex(column, flex-start, center);
+  background-color: rgb(65, 104, 223);
+  flex-shrink: 0;
+  margin: 1rem 1rem 1rem 0;
+  max-height: calc(100vh - 41rem);
+  overflow: auto;
+}

@@ -1,0 +1,15 @@
+.hover-btn {
+  background-color: rgba(141, 137, 137, 0.4);
+  border-radius: 1rem;
+  bottom: 1rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  padding: 0.5rem;
+  position: absolute;
+  transition: 0.3s linear;
+  z-index: 100;
+
+  &:hover {
+    background-color: rgba(141, 137, 137, 0.7);
+  }
+}

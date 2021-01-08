@@ -1,0 +1,28 @@
+.info-table {
+  @include size(20rem, 6rem);
+  background-color: rgb(255, 255, 0);
+  border-radius: 1rem;
+}
+
+.info-table__player-block {
+  @include flex(row, center, center);
+  @include size(100%, 3rem);
+  font-size: 2rem;
+}
+
+.info-table__player-name {
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.info-table__action-points-block {
+  @include flex(row, center, center);
+  @include size(100%, 3rem);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.info-table__action-points {
+  font-weight: 700;
+  margin-left: 0.5rem;
+}

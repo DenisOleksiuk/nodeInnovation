@@ -1,0 +1,40 @@
+.log {
+  @include flex(column, center, center);
+  height: calc(100vh - 56rem);
+  width: 30rem;
+}
+
+.log__title {
+  @include size(100%, 3rem);
+  @include flex(column, center, center);
+  background-color: rgb(255, 255, 0);
+  border-radius: 1rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.log__text {
+  background-color: rgb(0, 129, 0);
+  border-radius: 1rem;
+  height: calc(100vh - 60rem);
+  width: 100%;
+  overflow-y: scroll;
+  padding-left: 10px;
+  color: white;
+}
+
+.log__form {
+  width: 100%;
+}
+
+.log__input {
+  height: 30px;
+  outline: none;
+  border-radius: 1rem;
+}
+
+.log__btn {
+  height: 30px;
+  background-color: cornflowerblue;
+}

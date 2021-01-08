@@ -1459,6 +1459,7 @@ function chat() {
   }
 
   appendMessage('You joined');
+  console.log('yo');
   socket.emit('new-user', userName);
   socket.on('chat-message', function (data) {
     appendMessage("".concat(data.name, ": ").concat(data.message));

@@ -1,0 +1,19 @@
+@mixin size($w: auto, $h: auto) {
+  height: $h;
+  width: $w;
+}
+
+@mixin flex($fd: row, $jc: center, $ai: center, $d: flex) {
+  align-items: $ai;
+  display: $d;
+  flex-direction: $fd;
+  justify-content: $jc;
+}
+
+@mixin header-active-card {
+  border: solid 1px #000;
+  font-size: 1.8rem;
+  height: 2.2rem;
+  text-align: center;
+  width: 3.8rem;
+}

@@ -1,0 +1,64 @@
+.extra-cards {
+  @include size(30rem, 23rem);
+  @include flex(row, space-between, center);
+}
+
+.extra-cards__special-block {
+  @include size(14.5rem, 23rem);
+  @include flex(column, flex-start, center);
+  position: relative;
+}
+
+.extra-cards__special-title {
+  @include size(100%, 3rem);
+  @include flex(column, center, center);
+  background-color: rgb(255, 255, 0);
+  border-radius: 1rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.extra-cards__special-cards {
+  @include flex(column, center, center);
+  @include size(100%, 20rem);
+  background-image: url('/assets/img/test1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+
+  &:hover .hover-btn {
+    opacity: 1;
+  }
+}
+
+.extra-cards__leadership-block {
+  @include size(14.5rem, 23rem);
+  @include flex(column, flex-start, center);
+  position: relative;
+}
+
+.extra-cards__leadership-title {
+  @include size(100%, 3rem);
+  @include flex(column, center, center);
+  background-color: rgb(255, 255, 0);
+  border-radius: 1rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.extra-cards__leadership-cards {
+  @include flex(column, center, center);
+  @include size(100%, 20rem);
+  background-image: url('/assets/img/test2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+
+  &:hover .hover-btn {
+    opacity: 1;
+  }
+}

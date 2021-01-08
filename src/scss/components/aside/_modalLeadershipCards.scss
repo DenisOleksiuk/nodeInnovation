@@ -1,0 +1,51 @@
+.leadership-cards {
+  @include flex(column, center, center);
+  @include size(100%, 100vh);
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s linear;
+  z-index: 10000;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.leadership-cards__first-line,
+.leadership-cards__second-line,
+.leadership-cards__btn-line {
+  @include flex(row, center, center);
+  @include size(100%, auto);
+
+  > div {
+    margin: 1rem;
+  }
+}
+
+.leadership-cards__card {
+  @include flex(column, center, center);
+  @include size(14.5rem, 20rem);
+  background-image: url('/assets/img/test1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  font-size: 10rem;
+}
+
+.leadership-cards__btn {
+  @include size(15rem, 5rem);
+  background-color: rgba(141, 137, 137, 0.8);
+  border-radius: 1rem;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  transition: 0.3s linear;
+
+  &:hover {
+    background-color: rgba(141, 137, 137, 1);
+    transform: scale(1.05);
+  }
+}

@@ -1,0 +1,31 @@
+.current-deck {
+  @include size(30rem, 24rem);
+  @include flex(column, flex-start, center);
+  position: relative;
+}
+
+.current-deck__title {
+  @include size(30rem, 3rem);
+  @include flex(column, center, center);
+  background-color: rgb(255, 255, 0);
+  border-radius: 1rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.current-deck__cards {
+  @include flex(column, center, center);
+  @include size(30rem, 20rem);
+  margin: 0;
+  transition: 0.3s linear;
+
+  &:hover .hover-btn {
+    opacity: 1;
+  }
+
+  &:hover #cloneCurrentDeck {
+    transform: none;
+  }
+}

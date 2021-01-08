@@ -1,0 +1,13 @@
+.wrapper {
+  @include flex(row, flex-start, flex-start);
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper__main {
+  @include flex(column, flex-start, flex-start);
+  height: 100vh;
+  width: calc(
+    100% - 37rem
+  ); // aside width 37rem: 30rem card, 2rem margins, 5rem for decoration
+}

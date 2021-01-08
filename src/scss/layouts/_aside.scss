@@ -1,0 +1,22 @@
+.aside {
+  @include flex(column, space-between, center);
+  background-color: rgb(196, 99, 30);
+  border-left: 5rem solid rgb(4, 202, 202);
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 37rem;
+
+  > div {
+    margin: 0.5rem 1rem;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+}
