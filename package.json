@@ -18,7 +18,7 @@
     "lint:fix": "eslint --fix **/*.js",
     "stylelint": "stylelint src/**/*.scss",
     "stylelint:fix": "stylelint src/**/*.scss --fix",
-    "node": "nodemon"
+    "node": "concurrently \"npm run dev:watch\" \"nodemon\""
   },
   "repository": {
     "type": "git",
