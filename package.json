@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "clone of board game Innovation",
   "main": "server.js",
+  "engines": {
+    "node": "14.15"
+  },
   "scripts": {
     "test": "jest",
     "start": "node server.js",
