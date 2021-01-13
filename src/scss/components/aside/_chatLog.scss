@@ -1,0 +1,125 @@
+.chat-log {
+  background: linear-gradient(
+    90deg,
+    rgba(33, 14, 6, 1) 0%,
+    rgba(77, 35, 12, 1) 50%,
+    rgba(33, 14, 6, 1) 100%
+  );
+  border: 1px solid rgba(33, 14, 6, 1);
+  height: calc(100vh - 59.5rem);
+  position: absolute;
+  top: 56.5rem;
+  transition: all 0.5s linear;
+  width: 30rem;
+
+  &--full-screen {
+    height: calc(100vh - 11.5rem);
+    top: 8.5rem;
+
+    .chat-log__tab-content {
+      height: calc(100vh - 17.5rem);
+    }
+  }
+}
+
+#chat-block,
+#log-block {
+  display: none;
+}
+
+.chat-log__tab,
+.chat-log__tab-title {
+  background-color: #666;
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 8rem;
+}
+
+.chat-log__tab-title {
+  cursor: pointer;
+}
+
+.chat-log__tab :checked + .chat-log__tab-title {
+  background-color: rgb(182, 182, 182);
+  position: relative;
+  top: 1px;
+  z-index: 18;
+}
+
+.chat-log__tab-content {
+  @include flex(column, flex-start, flex-start);
+  background-color: rgb(182, 182, 182);
+  border: 1px solid #666;
+  height: calc(100vh - 65.5rem);
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  padding: 0 1rem;
+  position: absolute;
+  text-align: start;
+  transition: height 0.5s linear;
+  width: 100%;
+  z-index: -1;
+}
+
+.chat-log__tab :checked ~ .chat-log__tab-content {
+  opacity: 1;
+  z-index: 11;
+}
+
+.chat-log__form {
+  @include flex(row, flex-start, center);
+  background: linear-gradient(
+    90deg,
+    rgba(33, 14, 6, 1) 0%,
+    rgba(77, 35, 12, 1) 50%,
+    rgba(33, 14, 6, 1) 100%
+  );
+  bottom: 0;
+  height: 3rem;
+  padding-top: 0.2rem;
+  position: absolute;
+  width: 100%;
+}
+
+.chat-log__input {
+  border: 0;
+  border-radius: 1rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  outline: none;
+  padding: 0 0.5rem;
+  width: 19.5rem;
+}
+
+.chat-log__btn {
+  background-color: rgb(164, 247, 40);
+  border-radius: 1rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  padding-bottom: 0.1rem;
+  width: 9rem;
+}
+
+.chat-log__spread {
+  background-color: rgb(255, 255, 255);
+  background-image: url('/assets/icons/aside-spread-btn.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 2rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  transform: rotate(0deg);
+  transition: rotate 0.5s;
+  width: 2rem;
+
+  &--open {
+    transform: rotate(180deg);
+  }
+}

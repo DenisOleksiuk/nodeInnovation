@@ -1,4 +1,5 @@
 function chat() {
+  // eslint-disable-next-line no-undef
   const socket = io();
 
   const messageContainer = document.querySelector('.log__text');

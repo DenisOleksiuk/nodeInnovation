@@ -14,7 +14,13 @@
   <link rel="shortcut icon" href="./assets/icons/favicon.svg" type="image/x-icon">
 </head>
 <body>
-
+  <script>
+    document.body.className += " js-loading";
+    window.addEventListener("load", removeLoadingClass, false);
+    function removeLoadingClass() {
+      document.body.className = document.body.className.replace("js-loading", "");
+    }
+  </script>
   <script src="https://kit.fontawesome.com/d826400406.js" crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
 </body>

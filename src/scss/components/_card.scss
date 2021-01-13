@@ -9,78 +9,78 @@ b {
 
 .card {
   background-size: cover !important;
-  border-radius: 10px;
+  border-radius: 1rem;
   flex-shrink: 0;
   font-family: 'Fira Sans Condensed', sans-serif;
-  height: 200px;
-  margin: 10px;
+  height: 20rem;
+  margin: 1rem;
   overflow: hidden;
   position: relative;
   transition: all 2s;
-  width: 300px;
+  width: 30rem;
 
   .card__card-header {
-    box-shadow: 0 0 3px 2px rgb(41, 37, 37);
+    box-shadow: 0 0 0.3rem 0.2rem rgb(41, 37, 37);
     display: flex;
-    height: 30px;
+    height: 3rem;
     position: relative;
-    z-index: 2;
+    z-index: 0;
 
     .card__topLeft {
       align-items: center;
       background: #fff;
-      border-radius: 50px;
+      border-radius: 5rem;
       display: flex;
-      font-size: 30px;
-      font-weight: 700;
-      height: 60px;
+      font-size: 3rem;
+      font-weight: 70rem;
+      height: 6rem;
       justify-content: center;
-      margin-left: -10px;
-      margin-top: -10px;
-      padding-left: 3px;
-      padding-top: 7px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-      width: 60px;
+      margin-left: -1rem;
+      margin-top: -1rem;
+      padding-left: 0.3rem;
+      padding-top: 0.7rem;
+      text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.8);
+      width: 6rem;
     }
 
     .card-header__title {
       color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 5px;
+      font-size: 1.6rem;
+      font-weight: 60rem;
+      padding: 0.5rem;
       text-align: right;
-      text-shadow: 1px 1px #000;
+      text-shadow: 0.1rem 0.1rem #000;
       text-transform: uppercase;
-      width: calc(100% - 60px);
+      width: calc(100% - 6rem);
     }
   }
 
   .card__card-main {
     color: #fff;
-    font-size: 13px;
-    height: calc(100% - 30px);
+    font-size: 1.3rem;
+    height: calc(100% - 3rem);
     line-height: 1.3;
-    margin-left: calc(100% - 227px);
-    padding: 5px;
+    margin-left: calc(100% - 22.7rem);
+    padding: 0.5rem;
     z-index: 1;
 
     .age__number {
       background: #000;
-      border: 1px solid #fff;
-      padding: 0 3px;
+      border: 0.1rem solid #fff;
+      padding: 0 0.3rem;
     }
 
     .resourse__icon {
       background: #000;
-      border: 1px solid #fff;
-      border-radius: 50px;
-      font-size: 11px;
-      padding: 3px;
+      border: 0.1rem solid #fff;
+      border-radius: 5rem;
+      font-size: 1.1rem;
+      padding: 0.3rem;
     }
 
     .card__icon {
-      font-size: 12px;
-      margin-right: 5px;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
     }
 
     .card__dogma {
@@ -99,11 +99,11 @@ b {
       .card__icon::before {
         align-items: center;
         background-image: url('../../assets/img/cards-bg/corporate.png');
-        background-size: 30px 30px;
+        background-size: 3rem 3rem;
         display: inline-flex;
-        height: 30px;
+        height: 3rem;
         justify-content: center;
-        width: 30px;
+        width: 3rem;
       }
     }
 
@@ -111,11 +111,11 @@ b {
       .card__icon::before {
         align-items: center;
         background-image: url('../../assets/img/cards-bg/aggressive.png');
-        background-size: 30px 30px;
+        background-size: 3rem 3rem;
         display: inline-flex;
-        height: 30px;
+        height: 3rem;
         justify-content: center;
-        width: 30px;
+        width: 3rem;
       }
     }
   }
@@ -123,9 +123,9 @@ b {
   .card__card-footer {
     display: flex;
     justify-content: space-between;
-    left: -7px;
+    left: -0.7rem;
     position: absolute;
-    top: 155px;
+    top: 15.5rem;
     width: 104%;
 
     .card__bottomLeft,
@@ -133,15 +133,15 @@ b {
     .card__bottomRight {
       align-items: center;
       background: #fff;
-      border-radius: 50px;
+      border-radius: 5rem;
       display: flex;
-      font-size: 30px;
+      font-size: 3rem;
       font-weight: 700;
-      height: 60px;
+      height: 6rem;
       justify-content: center;
-      padding-bottom: 12px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
-      width: 60px;
+      padding-bottom: 1.2rem;
+      text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.8);
+      width: 6rem;
     }
   }
 }
@@ -216,31 +216,31 @@ b {
 }
 
 .card__icon-border--blue {
-  border: 2px solid rgb(62, 49, 136) !important;
-  box-shadow: 0 1px 3px #000 !important;
+  border: 0.2rem solid rgb(62, 49, 136) !important;
+  box-shadow: 0 0.1rem 0.3rem #000 !important;
 }
 
 .card__icon-border--red {
-  border: 2px solid rgb(197, 6, 16) !important;
-  box-shadow: 0 1px 3px #000 !important;
+  border: 0.2rem solid rgb(197, 6, 16) !important;
+  box-shadow: 0 0.1rem 0.3rem #000 !important;
 }
 
 .card__icon-border--green {
-  border: 2px solid rgb(9, 189, 48) !important;
-  box-shadow: 0 1px 3px #000 !important;
+  border: 0.2rem solid rgb(9, 189, 48) !important;
+  box-shadow: 0 0.1rem 0.3rem #000 !important;
 }
 
 .card__icon-border--purple {
-  border: 2px solid rgb(131, 6, 120) !important;
-  box-shadow: 0 1px 3px #000 !important;
+  border: 0.2rem solid rgb(131, 6, 120) !important;
+  box-shadow: 0 0.1rem 0.3rem #000 !important;
 }
 
 .card__icon-border--yellow {
-  border: 2px solid rgb(221, 162, 0) !important;
-  box-shadow: 0 1px 3px #000 !important;
+  border: 0.2rem solid rgb(221, 162, 0) !important;
+  box-shadow: 0 0.1rem 0.3rem #000 !important;
 }
 
 .card__age--border {
-  border: 1px solid #fff;
-  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.5);
+  border: 0.1rem solid #fff;
+  box-shadow: 0 0 0.2rem 0.2rem rgba(255, 255, 255, 0.5);
 }

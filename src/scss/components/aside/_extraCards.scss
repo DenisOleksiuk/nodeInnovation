@@ -22,7 +22,7 @@
 .extra-cards__special-cards {
   @include flex(column, center, center);
   @include size(100%, 20rem);
-  background-image: url('/assets/img/test1.png');
+  background-image: url('/assets/img/test2.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,7 +52,7 @@
 .extra-cards__leadership-cards {
   @include flex(column, center, center);
   @include size(100%, 20rem);
-  background-image: url('/assets/img/test2.png');
+  background-image: url('/assets/img/test1.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

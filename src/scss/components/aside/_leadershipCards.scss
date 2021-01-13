@@ -1,0 +1,36 @@
+.leadership-cards {
+  @include flex(column, center, center);
+  @include size(100%, 100vh);
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s linear;
+  z-index: 10000;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.leadership-cards__first-line,
+.leadership-cards__second-line,
+.leadership-cards__btn-line {
+  @include flex(row, center, center);
+  @include size(100%, auto);
+
+  > div {
+    margin: 1rem;
+  }
+}
+
+.leadership-cards__card {
+  @include flex(column, center, center);
+  @include size(14.5rem, 20rem);
+  background-image: url('/assets/img/test1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  font-size: 10rem;
+}

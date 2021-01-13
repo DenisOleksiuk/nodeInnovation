@@ -1,9 +1,38 @@
 html {
   font-size: 10px;
+
+  @media (max-height: 900px) {
+    font-size: 9px;
+  }
+
+  @media (max-height: 750px) {
+    font-size: 8px;
+  }
+
+  @media (max-height: 650px) {
+    font-size: 7px;
+  }
 }
 
 body {
   font-size: 2rem;
   height: auto;
   width: 100vw;
+
+  ::-webkit-scrollbar {
+    height: 1rem;
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #e7e7e7;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(77, 35, 12, 1);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(61, 25, 10);
+  }
 }

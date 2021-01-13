@@ -2,6 +2,7 @@
   @include size(20rem, 6rem);
   background-color: rgb(255, 255, 0);
   border-radius: 1rem;
+  position: relative;
 }
 
 .info-table__player-block {
@@ -25,4 +26,24 @@
 .info-table__action-points {
   font-weight: 700;
   margin-left: 0.5rem;
+}
+
+.info-table__next-turn-btn {
+  @include size(20rem, 6rem);
+  @include flex(column, center, center);
+  animation: blinker 1s linear infinite;
+  background-color: rgb(101, 121, 211);
+  border-radius: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 5000;
+}
+
+@keyframes blinker {
+  50% {
+    background-color: rgb(255, 0, 0);
+  }
 }

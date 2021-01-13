@@ -8,5 +8,9 @@
     "rules": {
       "no-param-reassign": "off",
       "prefer-destructuring": "off",
+      "linebreak-style": "off",
+      "class-methods-use-this": "off",
+      "prefer-rest-params": "off",
+      "prefer-default-export": "off"
     }
 }

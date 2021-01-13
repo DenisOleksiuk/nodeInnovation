@@ -9,16 +9,19 @@
 // components
 @import './components/card';
 @import './components/menu';
+@import './components/intro';
 @import './components/ageDeck';
+@import './components/closeModalBtn';
+@import './components/modal';
 // components__aside
 @import './components/aside/infoTable';
 @import './components/aside/hoverBtn';
 @import './components/aside/currentDeck';
-@import './components/aside/modalAgeDecks';
+@import './components/aside/ageDecks';
 @import './components/aside/extraCards';
-@import './components/aside/log';
-@import './components/aside/modalLeadershipCards';
-@import './components/aside/modalSpecialCards';
+@import './components/aside/Chatlog';
+@import './components/aside/leadershipCards';
+@import './components/aside/specialCards';
 
 // layouts
 @import './layouts/playerTable';
@@ -26,3 +29,10 @@
 @import './layouts/aside';
 @import './layouts/activeZone';
 @import './layouts/hand';
+
+.js-loading *,
+.js-loading *::before,
+.js-loading *::after {
+  animation-play-state: paused !important;
+}
+[hidden] { display: none !important; }

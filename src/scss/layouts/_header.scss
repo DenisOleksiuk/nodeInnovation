@@ -8,9 +8,13 @@
 
 .player-container {
   @include flex(column, space-around, center);
-  border: solid 1px #000;
+  border: solid 0.1rem #000;
   height: 10rem;
   width: 23.5rem;
+  
+  &__hidden {
+    display: none;
+  }
 }
 
 .head-row {

@@ -1,6 +1,5 @@
 .menu {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -12,19 +11,23 @@
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
-
   width: 100%;
+  z-index: 5;
+}
+
+.menu__used {
+  animation: show-menu 0.5s linear 0s forwards !important;
 }
 
 .menu__link {
   color: #53b1e7;
   display: inline-block;
   font-family: 'Muli', sans-serif;
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1;
-  padding: 14px 0;
+  padding: 1.4rem 0;
   position: relative;
   text-decoration: none;
 }
@@ -43,7 +46,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
-  width: calc(100% + 60px);
+  width: calc(100% + 6rem);
   z-index: -1;
 }
 
@@ -77,13 +80,39 @@
   color: rgb(252, 4, 4);
   cursor: pointer;
   position: absolute;
-  right: -20px;
-  top: -25px;
+  right: -2rem;
+  top: -2rem;
 }
 
 .iframe {
   height: 100%;
   width: 100%;
+}
+
+label {
+  color: rgb(245, 222, 179);
+}
+
+input[type='text'] {
+  display: block;
+  margin: 5px auto;
+  padding-left: 25px;
+
+  &:valid {
+    background-image: url('../../assets/icons/succeess.svg.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: rgb(0, 136, 0) solid 3px;
+  }
+
+  &:invalid {
+    background-image: url('../../assets/icons/unnamed.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: rgb(255, 0, 0) solid 3px;
+  }
 }
 
 .hide {

@@ -155,31 +155,39 @@ const displayAside = {
   getLogBlock() {
     // create log block
     const logBlock = document.createElement('div');
-    logBlock.classList.add('log');
+    logBlock.classList.add('chat-log');
 
-    // create log block title
-    const logBlockTitle = document.createElement('div');
-    logBlockTitle.classList.add('log__title');
-    logBlockTitle.innerText = 'Чат/Лог';
+    // chat tab
+    logBlock.innerHTML = `<div class="chat-log__tab">
+      <input type="radio" id="chat-block" name="tab-group" checked>
+      <label for="chat-block" class="chat-log__tab-title">Чат</label> 
+      <section class="chat-log__tab-content chat-block">
+      </section> 
+    </div>`;
 
-    // create log block text block
-    const logBlockText = document.createElement('div');
-    logBlockText.classList.add('log__text');
+    // log tab
+    logBlock.innerHTML += `<div class="chat-log__tab">
+      <input type="radio" id="log-block" name="tab-group">
+      <label for="log-block" class="chat-log__tab-title">Лог</label> 
+      <section class="chat-log__tab-content log-block">
+      </section> 
+    </div>`;
 
-    // create log form for chat / log
-    const logForm = document.createElement('form');
-    const logInput = document.createElement('input');
-    const logBtn = document.createElement('button');
-    logForm.classList.add('log__form');
-    logInput.classList.add('log__input');
-    logBtn.classList.add('log__btn');
-    logBtn.type = 'text';
-    logBtn.textContent = 'Отправить';
+    // input
+    logBlock.innerHTML += `<form class="chat-log__form" id="input-form">
+      <input class="chat-log__input">
+      <button class="chat-log__btn" type="submit" form="input-form">Отправить</button>
+    </form>`;
 
-    // append title and text block to log block
-    logForm.append(logInput, logBtn);
-    logBlock.append(logBlockTitle, logBlockText, logForm);
-    // logBlock.append(logBlockText);
+    // spread button
+    const spreadBtn = document.createElement('div');
+    spreadBtn.classList.add('chat-log__spread');
+    logBlock.append(spreadBtn);
+
+    spreadBtn.addEventListener('click', () => {
+      logBlock.classList.toggle('chat-log--full-screen');
+      spreadBtn.classList.toggle('chat-log__spread--open');
+    });
 
     return logBlock;
   },
@@ -189,8 +197,13 @@ const displayAside = {
     const agesNumber = 10;
     const ageDecksBlock = document.createElement('div');
     ageDecksBlock.classList.add('age-decks');
-    ageDecksBlock.classList.add('age-decks--hidden'); // hidden by default
+    ageDecksBlock.classList.add('age-decks--hidden');
 
+    // Animation classes and attributes for modal block here
+    ageDecksBlock.classList.add('xyz-in');
+    ageDecksBlock.setAttribute('xyz', 'fade-100% duration-6');
+
+    // create blocks - lines of cards
     const firstLine = document.createElement('div');
     firstLine.classList.add('age-decks__first-line');
 
@@ -213,6 +226,10 @@ const displayAside = {
 
       deck.addEventListener('click', () => this.ageDecksBlock.classList.toggle('age-decks--hidden'));
 
+      // Animation classes and attributes for cards here
+      deck.classList.add('xyz-in');
+      deck.setAttribute('xyz', 'flip-left-25% rotate-right-25% up-5 duration-6');
+
       if (i < 4) {
         firstLine.append(deck);
       } else if (i < 7) {
@@ -223,11 +240,8 @@ const displayAside = {
       if (i === 9) {
         // create close button
         const button = document.createElement('button');
-        button.classList.add('age-decks__btn');
+        button.classList.add('close-modal-btn');
         button.innerText = 'Закрыть';
-        button.addEventListener('click', () => {
-          this.ageDecksBlock.classList.toggle('age-decks--hidden');
-        });
         btnLine.append(button);
       }
     }
@@ -244,8 +258,13 @@ const displayAside = {
     // create leadership decks modal block
     const leadershipCardsBlock = document.createElement('div');
     leadershipCardsBlock.classList.add('leadership-cards');
-    leadershipCardsBlock.classList.add('leadership-cards--hidden'); // hidden by default
+    leadershipCardsBlock.classList.add('leadership-cards--hidden');
 
+    // Animation classes and attributes for modal block here
+    leadershipCardsBlock.classList.add('xyz-in');
+    leadershipCardsBlock.setAttribute('xyz', 'fade-100% duration-6');
+
+    // create blocks - lines of cards
     const firstLine = document.createElement('div');
     firstLine.classList.add('leadership-cards__first-line');
 
@@ -262,17 +281,18 @@ const displayAside = {
       leadershipCard.classList.add('leadership-cards__card');
       leadershipCard.innerText = `${i + 1}`;
 
+      // Animation classes and attributes for cards here
+      leadershipCard.classList.add('xyz-in');
+      leadershipCard.setAttribute('xyz', 'flip-left-25% rotate-right-25% up-5 duration-6');
+
       if (i < 5) firstLine.append(leadershipCard);
       else if (i < 10) secondLine.append(leadershipCard);
 
       if (i === 9) {
         // create close button
         const button = document.createElement('button');
-        button.classList.add('leadership-cards__btn');
+        button.classList.add('close-modal-btn');
         button.innerText = 'Закрыть';
-        button.addEventListener('click', () => {
-          this.leadershipCardsBlock.classList.toggle('leadership-cards--hidden');
-        });
         btnLine.append(button);
       }
     }
@@ -290,6 +310,11 @@ const displayAside = {
     specialCardsBlock.classList.add('special-cards');
     specialCardsBlock.classList.add('special-cards--hidden');
 
+    // Animation classes and attributes for modal block here
+    specialCardsBlock.classList.add('xyz-in');
+    specialCardsBlock.setAttribute('xyz', 'fade-100% duration-6');
+
+    // create blocks - lines of cards
     const firstLine = document.createElement('div');
     firstLine.classList.add('special-cards__first-line');
 
@@ -305,17 +330,18 @@ const displayAside = {
       const specialCard = document.createElement('div');
       specialCard.classList.add('special-cards__card');
 
+      // Animation classes and attributes for cards here
+      specialCard.classList.add('xyz-in');
+      specialCard.setAttribute('xyz', 'flip-left-25% rotate-right-25% up-5 duration-6');
+
       if (i < 3) firstLine.append(specialCard);
       else if (i < 5) secondLine.append(specialCard);
 
+      // create close button
       if (i === 4) {
-        // create close button
         const button = document.createElement('button');
-        button.classList.add('special-cards__btn');
+        button.classList.add('close-modal-btn');
         button.innerText = 'Закрыть';
-        button.addEventListener('click', () => {
-          this.specialCardsBlock.classList.toggle('special-cards--hidden');
-        });
         btnLine.append(button);
       }
     }

@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
@@ -25,4 +24,5 @@ io.on('connection', (socket) => {
   });
 });
 
+const PORT = process.env.PORT || 3000;
 server.listen(PORT);

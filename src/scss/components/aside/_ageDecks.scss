@@ -1,0 +1,21 @@
+.age-decks {
+  @include flex(column, center, center);
+  @include size(100%, 100vh);
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.age-decks__first-line,
+.age-decks__second-line,
+.age-decks__third-line,
+.age-decks__btn-line {
+  @include flex(row, center, center);
+  @include size(100%, auto);
+}

@@ -1,5 +1,7 @@
 import getCard from '../cards/getCard';
+import renderCard from '../cards/renderCard';
 import header from '../display/playerTable/displayHeader';
+import gameState from './gameState';
 
 /*
 * store all player cards objects (hand/table/lead/influence)
@@ -21,23 +23,23 @@ export default class Player {
     this.activeStacks = {
       blue: {
         cards: [],
-        shift: null,
+        shift: 'right', //! TEST
       },
       red: {
         cards: [],
-        shift: null,
+        shift: 'top', //! TEST
       },
       green: {
         cards: [],
-        shift: null,
+        shift: null, //! TEST
       },
       purple: {
         cards: [],
-        shift: null,
+        shift: 'left', //! TEST
       },
       yellow: {
         cards: [],
-        shift: null,
+        shift: 'top', //! TEST
       },
     };
 
@@ -97,13 +99,25 @@ export default class Player {
   renderLastTakenCard() {
     const lastTakenCard = this.hand[this.hand.length - 1];
     const cardElement = getCard.frontSide(lastTakenCard);
+
+    // add animation when card render to hand
+    cardElement.setAttribute('xyz', 'fade right-3 flip-right rotate-left');
+    cardElement.classList.add('xyz-in');
+
     cardElement.onclick = () => { this.playCard(lastTakenCard, cardElement); };
     this.gameUI.hand.append(cardElement);
+
+    // remove animation when card rendered
+    setTimeout(() => {
+      // cardElement.removeAttribute('xyz');
+      cardElement.classList.remove('xyz-in');
+    }, 450);
   }
 
   // render all cards in hand of current player
   renderHand() {
     this.gameUI.hand.innerHTML = ''; // clear previous rendered hand
+
     this.hand.forEach((card) => {
       const cardElement = getCard.frontSide(card);
       cardElement.onclick = () => {
@@ -126,17 +140,11 @@ export default class Player {
   // on click event for cards in hand. Play card in stack depends on category
   // TODO: later this method should add dogma function to each played card
   playCard(cardObj, cardElement) {
-    Object.keys(this.activeStacks).forEach((stackName) => {
-      if (stackName === cardObj.color) {
-        this.hand.forEach((e, i) => {
-          if (e === cardObj) {
-            this.hand.splice(i, 1);
-          }
-        });
-        this.activeStacks[stackName].cards.push(cardObj);
-        this.gameUI.activeStacks[stackName].append(cardElement);
-      }
-    });
+    renderCard.toActive(cardElement);
+
+    // test block, emulate adding card to active zone
+    const test = cardElement.parentElement.id;
+    gameState.activePlayer.activeDecks[test].cards.push(1);
     this.calculateResources();
     header.changePlayerStats(this);
     this.game.actionDone();

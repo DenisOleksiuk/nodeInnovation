@@ -1,17 +1,71 @@
 .active-zone {
   @include flex(row, flex-start, flex-end);
-  background-color: rgb(151, 140, 190);
-  height: calc(100vh - 32rem); // 32rem = 10rem header + 22rem hand
+  background: linear-gradient(
+    90deg,
+    rgba(33, 14, 6, 1) 0%,
+    rgba(77, 35, 12, 1) 50%,
+    rgba(33, 14, 6, 1) 100%
+  );
+  height: calc(100vh - 37rem); // 32rem = 10rem header + 27rem hand
   overflow-x: auto;
   overflow-y: auto;
-  width: 100%; // 20% for aside
+  position: relative;
+  width: 100%;
+}
+
+.active-zone__overlay {
+  background: url('../../assets/img/block-bg.png');
+  background-size: contain;
+  height: 96%;
+  mix-blend-mode: overlay;
+  position: absolute;
+  top: 1.1rem;
+  width: calc(100% - 6rem);
+}
+
+.active-zone__cards-block {
+  @include flex(row, flex-start, flex-end);
+  border: 0.1rem solid transparent;
+  border-image: url('../../assets/img/border-center.png');
+  border-image-repeat: round;
+  border-image-slice: 47 46 37 46;
+  border-image-width: 2.5rem;
+  flex-wrap: nowrap;
+  height: 100%;
+  overflow: auto;
+  padding: 0 1.5rem 0 0.7rem;
+  scroll-behavior: smooth;
+  width: calc(100% - 5rem);
+  z-index: 2;
+}
+
+.active-zone__cards-wrapper {
+  @include flex(row, flex-start, flex-end);
+  flex-wrap: nowrap;
+  height: calc(100vh - 44.5rem);
+  margin-left: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  transition: all 0.3s;
+  width: 100%;
 }
 
 .active-zone__stack {
-  @include flex(column, flex-start, center);
-  background-color: rgb(65, 104, 223);
+  @include flex(column, flex-start, flex-start);
   flex-shrink: 0;
-  margin: 1rem 1rem 1rem 0;
-  max-height: calc(100vh - 41rem);
-  overflow: auto;
+  height: calc(100vh - 46rem);
+  position: relative;
+  width: 32rem;
+
+  &--empty {
+    height: 0;
+    width: 0;
+  }
+
+  .card {
+    bottom: 0;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
 }

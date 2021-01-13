@@ -5,12 +5,12 @@
   filter: brightness(0.6);
   flex-shrink: 0;
   font-size: 5rem;
-  margin: 1rem;
+  margin: 0.5rem;
   text-align: center;
 }
 
 .age-deck--active {
-  box-shadow: 0 0 13px 10px rgba(252, 177, 3, 1);
+  box-shadow: 0 0 1.3rem 1rem rgba(252, 177, 3, 1);
   cursor: pointer;
   filter: brightness(1);
   transition: all 0.2s linear;

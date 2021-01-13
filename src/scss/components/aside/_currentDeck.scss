@@ -1,5 +1,5 @@
 .current-deck {
-  @include size(30rem, 24rem);
+  @include size(30rem, 23rem);
   @include flex(column, flex-start, center);
   position: relative;
 }

@@ -2,6 +2,24 @@ const displayHeader = {
   wrapper: null,
   headRowNames: [{ hand: ['fas', 'fa-hand-paper', 'yellow'] }, { influence: ['fas', 'fa-shield-alt', 'red'] }, { leadership: ['fas', 'fa-trophy', 'yellow'] }],
   resourcesNames: [{ tree: ['fab', 'fa-pagelines', 'green'] }, { tower: ['fab', 'fa-fort-awesome', 'grey'] }, { crown: ['fas', 'fa-crown', 'yellow'] }, { bulb: ['fas', 'fa-lightbulb', 'purple'] }, { factory: ['fas', 'fa-industry', 'red'] }, { clock: ['far', 'fa-clock', 'blue'] }],
+  player0: {
+    container: null,
+    name: null,
+    hand: null,
+    influence: null,
+    leadership: null,
+    red: null,
+    green: null,
+    blue: null,
+    purple: null,
+    yellow: null,
+    tree: null,
+    tower: null,
+    crown: null,
+    bulb: null,
+    factory: null,
+    clock: null,
+  },
   player1: {
     container: null,
     name: null,
@@ -39,24 +57,6 @@ const displayHeader = {
     clock: null,
   },
   player3: {
-    container: null,
-    name: null,
-    hand: null,
-    influence: null,
-    leadership: null,
-    red: null,
-    green: null,
-    blue: null,
-    purple: null,
-    yellow: null,
-    tree: null,
-    tower: null,
-    crown: null,
-    bulb: null,
-    factory: null,
-    clock: null,
-  },
-  player4: {
     container: null,
     name: null,
     hand: null,
@@ -152,6 +152,7 @@ const displayHeader = {
     });
 
     this[player].container.appendChild(recourcesRow);
+    this[player].container.classList.add('player-container__hidden');
     this.wrapper.appendChild(this[player].container);
   },
 
@@ -172,13 +173,21 @@ const displayHeader = {
     this[playerId].clock.textContent = player.clock;
   },
 
+  initPlayerNames(players) {
+    for (let i = 0; i < players.length; i += 1) {
+      const currentPlayer = `player${i}`;
+      this[currentPlayer].name.textContent = players[i].name;
+      this[currentPlayer].container.classList.remove('player-container__hidden');
+    }
+  },
+
   init() {
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add('header');
+    this.initPlayerStats(0);
     this.initPlayerStats(1);
     this.initPlayerStats(2);
-    /* this.initPlayerStats(this.testPlayer3);
-    this.initPlayerStats(this.testPlayer4); */
+    this.initPlayerStats(3);
     return this.wrapper;
   },
 };
