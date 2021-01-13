@@ -6,10 +6,10 @@
   "scripts": {
     "test": "jest",
     "start": "node server.js",
+    "build": "webpack --mode development",
     "open": "webpack serve",
     "build:prod": "webpack --mode production",
     "dev": "npm build && npm start",
-    "build": "webpack --mode development",
     "dev:watch": "webpack --watch --mode development",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js",
