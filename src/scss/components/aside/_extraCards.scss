@@ -12,21 +12,24 @@
 .extra-cards__special-title {
   @include size(100%, 3rem);
   @include flex(column, center, center);
-  background-color: rgb(255, 255, 0);
-  border-radius: 1rem;
-  font-size: 2.1rem;
-  font-weight: 700;
+  bottom: 3.2rem;
+  color: #fff;
+  font-family: 'Caesar';
+  font-size: 2.5rem;
+  position: absolute;
   text-align: center;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0);
+  z-index: 2;
 }
 
 .extra-cards__special-cards {
   @include flex(column, center, center);
-  @include size(100%, 20rem);
-  background-image: url('/assets/img/test2.png');
+  @include size(100%, 25rem);
+  background-image: url('/assets/img/spec-title.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 1rem;
+  filter: drop-shadow(2px 4px 6px rgb(0, 0, 0));
 
   &:hover .hover-btn {
     opacity: 1;
@@ -42,21 +45,24 @@
 .extra-cards__leadership-title {
   @include size(100%, 3rem);
   @include flex(column, center, center);
-  background-color: rgb(255, 255, 0);
-  border-radius: 1rem;
-  font-size: 2.1rem;
-  font-weight: 700;
+  bottom: 3.2rem;
+  color: #fff;
+  font-family: 'Caesar';
+  font-size: 2.5rem;
+  position: absolute;
   text-align: center;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0);
+  z-index: 2;
 }
 
 .extra-cards__leadership-cards {
   @include flex(column, center, center);
-  @include size(100%, 20rem);
-  background-image: url('/assets/img/test1.png');
+  @include size(100%, 25rem);
+  background-image: url('/assets/img/lead-title.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 1rem;
+  filter: drop-shadow(2px 4px 6px rgb(0, 0, 0));
 
   &:hover .hover-btn {
     opacity: 1;

@@ -1,11 +1,6 @@
 .hand {
   @include flex(row, flex-start, flex-start);
-  background: linear-gradient(
-    90deg,
-    rgba(33, 14, 6, 1) 0%,
-    rgba(77, 35, 12, 1) 50%,
-    rgba(33, 14, 6, 1) 100%
-  );
+  background: $tables-bg;
   height: 27rem;
   position: relative;
   transition: all 0.5s;
@@ -14,31 +9,24 @@
   .card {
     margin: 3.5rem;
   }
+
+  .hand__title {
+    @include title-settings('../../assets/img/title-hand.png');
+    z-index: 15;
+  }
 }
 
 .hand__overlay {
-  background: url('../../assets/img/block-bg.png');
-  background-size: contain;
-  height: 96%;
-  mix-blend-mode: overlay;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  @include block-background-overlay;
   width: calc(100% - 6rem);
 }
 
 .hand__cards {
   @include flex(row, center, center);
-  border: 0.1rem solid transparent;
-  border-image: url('../../assets/img/border.png');
-  border-image-repeat: round;
-  border-image-slice: 47 46 37 46;
-  border-image-width: 2.5rem;
-  /* background-color: rgb(148, 118, 53);*/
+  @include area-border('../../assets/img/border-bottom.png');
   flex-wrap: wrap;
   height: 100%;
   overflow: hidden;
-  padding: 0 0 0 1rem;
   scroll-behavior: smooth;
   width: calc(100% - 5rem);
   z-index: 2;
@@ -55,13 +43,14 @@
 }
 
 .hand__controls {
+  @include area-border('../../assets/img/border-hand-control.png');
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
   position: absolute;
-  right: 0.3rem;
-  width: 6rem;
+  right: -0.05rem;
+  width: 6.5rem;
   z-index: 1;
 }
 
@@ -92,6 +81,7 @@
 
   svg {
     height: 5rem;
+    opacity: 1;
     width: 5rem;
   }
 

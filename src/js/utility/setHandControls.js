@@ -26,9 +26,6 @@ export default function setGameControls() {
   // const timeout used because time needed for scroll animation before values updated
   const timeoutTime = 350;
 
-  // disable scrolling in hand block
-  hand.onwheel = function disableScroll() { return false; };
-
   // event activated on each inserted card
   hand.addEventListener('DOMNodeInserted', () => {
     // scroll to inserted card (or do nothing)
@@ -44,7 +41,7 @@ export default function setGameControls() {
   hand.addEventListener('DOMNodeRemoved', () => {
     setTimeout(() => {
       // only one line of card left - disable both buttons
-      if (hand.scrollHeight === cardsLineHeight) {
+      if (hand.scrollHeight <= cardsLineHeight) {
         disableBtn(btnBottom);
         disableBtn(btnTop);
       // if point of view is on last line

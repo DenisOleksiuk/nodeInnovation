@@ -13,13 +13,14 @@
 @import './components/ageDeck';
 @import './components/closeModalBtn';
 @import './components/modal';
+@import './components/recycleModal';
 // components__aside
 @import './components/aside/infoTable';
 @import './components/aside/hoverBtn';
 @import './components/aside/currentDeck';
 @import './components/aside/ageDecks';
-@import './components/aside/chatLog';
 @import './components/aside/extraCards';
+@import './components/aside/Chatlog';
 @import './components/aside/leadershipCards';
 @import './components/aside/specialCards';
 
@@ -35,4 +36,12 @@
 .js-loading *::after {
   animation-play-state: paused !important;
 }
-[hidden] { display: none !important; }
+
+@font-face {
+  font-family: Caesar;
+  src: url('../../assets/fonts/caesar.otf');
+}
+
+[hidden] {
+  display: none !important;
+}

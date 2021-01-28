@@ -12,8 +12,51 @@
 
 @mixin header-active-card {
   border: solid 0.1rem #000;
+  border-radius: 0.4rem;
   font-size: 1.8rem;
   height: 2.2rem;
   text-align: center;
+  transition: all 0.5s;
   width: 3.8rem;
+}
+
+@mixin block-background-overlay {
+  background: url('../../assets/img/block-bg.png') center;
+  height: 96%;
+  mix-blend-mode: overlay;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin title-settings($url, $size: cover) {
+  background: url($url);
+  background-size: $size;
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8));
+  height: 62px;
+  left: 50%;
+  position: absolute;
+  top: -25px; // don't change on rem
+  transform: translateX(-50%);
+  width: 150px;
+  z-index: 3;
+}
+
+@mixin area-border($url) {
+  border: 0.1rem solid transparent;
+  border-image: url($url);
+  border-image-repeat: round;
+  border-image-slice: 72 72 72 72;
+  border-image-width: 4rem;
+}
+
+@mixin about-person($url) {
+  align-items: flex-end;
+  background: url($url) no-repeat;
+  background-position: top;
+  background-size: cover;
+  border: 0;
+  display: flex;
+  height: 20rem;
+  width: 13rem;
 }

@@ -27,8 +27,72 @@
   @include flex(column, center, center);
   @include size(30rem, 20rem);
   background-color: rgb(202, 191, 189);
+  background-size: cover !important;
   border-radius: 1rem;
-  font-size: 10rem;
+  flex-shrink: 0;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 2s;
+
+  .card__card-header {
+    @include flex;
+    background: rgb(5, 126, 120);
+    box-shadow: 0 0 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
+    color: #fff;
+    height: 3rem;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    .card-header__title {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600; // font-weight does not use REM units
+      padding: 0.5rem;
+      text-align: right;
+      text-shadow: 0.1rem 0.1rem #000;
+      text-transform: uppercase;
+    }
+  }
+
+  .card__card-main {
+    background: rgba(4, 83, 79, 0.8);
+    color: #fff;
+    font-size: 1.45rem;
+    height: calc(100% - 3rem);
+    line-height: 1.25;
+    margin-left: calc(100% - 20rem);
+    padding: 0.5rem 1rem;
+    z-index: 1;
+
+    .age__number {
+      background: #000;
+      border: 0.1rem solid #fff;
+      padding: 0 0.3rem;
+    }
+
+    .spec-card__icon {
+      background: #000;
+      border: 0.1rem solid #fff;
+      border-radius: 5rem;
+      font-size: 1.5rem;
+      min-width: 2.4rem;
+      padding: 0.3rem;
+      text-align: center;
+    }
+
+    .card__rule {
+      display: flex;
+      margin-top: 0.3rem;
+    }
+
+    .card__rules-block {
+      @include flex(column, space-around);
+      height: 100%;
+    }
+  }
 }
 
 .special-cards__btn {

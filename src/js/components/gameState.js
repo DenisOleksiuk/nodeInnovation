@@ -16,34 +16,50 @@ const gameState = {
   players: [],
   currentPlayer: null,
   activePlayer: null,
+  dogmPlayers: null,
   player0: {
     name: null,
     id: 0,
     actionPoints: 0,
     hand: [],
     currentAge: 1,
+    currentDeck: 'age1', // test
+    specialCards: [],
+    specArchieveCount: 0,
+    specInfluenceCount: 0,
+    leadershipCards: [],
     activeDecks: {
       red: {
         cards: [],
-        shift: 'right', //! test
+        shift: '',
       },
       green: {
         cards: [],
-        shift: 'top', //! test
+        shift: '',
       },
       blue: {
         cards: [],
-        shift: 'left', //! test
+        shift: '',
       },
       purple: {
         cards: [],
-        shift: null,
+        shift: '',
       },
       yellow: {
         cards: [],
-        shift: 'top', //! test
+        shift: '',
       },
     },
+    influence: {
+      points: 0,
+      cards: [],
+    },
+    tree: 0,
+    tower: 0,
+    crown: 0,
+    bulb: 0,
+    factory: 0,
+    clock: 0,
   },
   player1: {
     name: null,
@@ -51,28 +67,40 @@ const gameState = {
     actionPoints: 0,
     hand: [],
     currentAge: 1,
+    specialCards: [],
+    leadershipCards: [],
     activeDecks: {
       red: {
         cards: [],
-        shift: null,
+        shift: '',
       },
       green: {
         cards: [],
-        shift: null,
+        shift: '',
       },
       blue: {
         cards: [],
-        shift: null,
+        shift: '',
       },
       purple: {
         cards: [],
-        shift: null,
+        shift: '',
       },
       yellow: {
         cards: [],
-        shift: null,
+        shift: '',
       },
     },
+    influence: {
+      points: 0,
+      cards: [],
+    },
+    tree: 0,
+    tower: 0,
+    crown: 0,
+    bulb: 0,
+    factory: 0,
+    clock: 0,
   },
   player2: {
     name: null,
@@ -80,6 +108,8 @@ const gameState = {
     actionPoints: 0,
     hand: [],
     currentAge: 1,
+    specialCards: [],
+    leadershipCards: [],
     activeDecks: {
       red: {
         cards: [],
@@ -102,6 +132,16 @@ const gameState = {
         shift: null,
       },
     },
+    influence: {
+      points: 0,
+      cards: [],
+    },
+    tree: 0,
+    tower: 0,
+    crown: 0,
+    bulb: 0,
+    factory: 0,
+    clock: 0,
   },
   player3: {
     name: null,
@@ -109,6 +149,8 @@ const gameState = {
     actionPoints: 0,
     hand: [],
     currentAge: 1,
+    specialCards: [],
+    leadershipCards: [],
     activeDecks: {
       red: {
         cards: [],
@@ -131,6 +173,16 @@ const gameState = {
         shift: null,
       },
     },
+    influence: {
+      points: 0,
+      cards: [],
+    },
+    tree: 0,
+    tower: 0,
+    crown: 0,
+    bulb: 0,
+    factory: 0,
+    clock: 0,
   },
 };
 

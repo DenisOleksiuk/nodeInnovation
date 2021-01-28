@@ -44,31 +44,47 @@ module.exports = {
   ],
   module: {
     rules:
-        [
-          {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-            },
+      [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
           },
-          {
-            test: /\.css$/i,
-            use: [MiniCssExtractPlugin.loader, 'css-loader'],
-          },
-          {
-            test: /\.scss$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-          },
-          {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
-            loader: 'file-loader',
+        },
+        {
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        },
+        {
+          test: /\.scss$/,
+          use: [{
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              name: '[path][name].[ext]',
-              publicPath: './',
+              publicPath: '',
             },
           },
-        ],
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+          ],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            publicPath: './',
+          },
+        },
+        {
+          test: /\.(woff2?|ttf|otf|eot)$/,
+          exclude: /node_modules/,
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        },
+      ],
   },
   optimization: {
     minimizer: [

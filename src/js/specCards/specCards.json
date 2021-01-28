@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Дипломатия",
+    "cardImg": "./assets/img/cards-bg/spec-01.png",
+    "rules": [
+      "<b>Добейтесь лидерства</b> в этой сфере, как только ваши карты приносят 12 или больше <i class='far fa-clock spec-card__icon card__icon-color--blue'></i>",
+      "<b>Также лидерства</b> в этой сфере можно добиться с помощью \"Перевода\" (3)."
+    ]
+  },
+  {
+    "name": "Строительство",
+    "cardImg": "./assets/img/cards-bg/spec-02.png",
+    "rules": [
+      "<b>Добейтесь лидерства</b> в этой сфере, как только архивируете и/или зачитываете 6 кард за ход.",
+      "<b>Также лидерства</b> в этой сфере можно добиться с помощью \"Каменной кладки\" (1)."
+    ]
+  },
+  {
+    "name": "Наука",
+    "cardImg": "./assets/img/cards-bg/spec-03.png",
+    "rules": [
+      "<b>Добейтесь лидерства</b> в этой сфере, как только все ваши активные карты будут уровня <span class = 'age__number'>8</span> или выше",
+      "<b>Также лидерства</b> в этой сфере можно добиться с помощью \"Астрономии\" (5)."
+    ]
+  },
+  {
+    "name": "Военное дело",
+    "cardImg": "./assets/img/cards-bg/spec-04.png",
+    "rules": [
+      "<b>Добейтесь лидерства</b> в этой сфере, как только ваши карты приносят не менее 3 каждого ресурса: </br><i class='fab fa-fort-awesome spec-card__icon card__icon-color--grey'></i> <i class='fas fa-crown spec-card__icon card__icon-color--yellow'></i> <i class='far fa-clock spec-card__icon card__icon-color--blue'></i> <i class='fas fa-lightbulb spec-card__icon card__icon-color--purple'></i> <i class='fab fa-pagelines spec-card__icon card__icon-color--green'></i> <i class='fas fa-industry spec-card__icon card__icon-color--red'></i>",
+      "<b>Также лидерства</b> в этой сфере можно добиться с помощью \"Укреплений\" (2)."
+    ]
+  },
+  {
+    "name": "Культура",
+    "cardImg": "./assets/img/cards-bg/spec-05.png",
+    "rules": [
+      "<b>Добейтесь лидерства</b> в этой сфере, как только у вас в игре будет 5 стопок, и каждая сдвинута вверх или вправо.",
+      "<b>Также лидерства</b> в этой сфере можно добиться с помощью \"Изобретений\" (4)."
+    ]
+  }
+]

@@ -1,7 +1,11 @@
 .info-table {
-  @include size(20rem, 6rem);
-  background-color: rgb(255, 255, 0);
+  @include size(26.5rem, 8rem);
+  @include flex(column);
+  background: url('../../assets/img/info-table.png');
+  background-size: cover;
   border-radius: 1rem;
+  color: #ffd000;
+  filter: drop-shadow(2px 4px 6px rgb(0, 0, 0));
   position: relative;
 }
 
@@ -29,21 +33,25 @@
 }
 
 .info-table__next-turn-btn {
-  @include size(20rem, 6rem);
+  @include size(26.5rem, 8rem);
   @include flex(column, center, center);
-  animation: blinker 1s linear infinite;
-  background-color: rgb(101, 121, 211);
+  animation: blinker 2s ease-in-out infinite;
+  background: url('../../assets/img/info-table.png');
+  background-size: cover;
   border-radius: 1rem;
   border-radius: 1rem;
   cursor: pointer;
-  left: 0;
+  font-family: 'Caesar';
+  font-size: 1.5rem;
+  left: 50%;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 5000;
 }
 
 @keyframes blinker {
   50% {
-    background-color: rgb(255, 0, 0);
+    font-size: 2.4rem;
   }
 }

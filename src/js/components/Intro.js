@@ -1,7 +1,7 @@
 import Menu from './mainMenu';
 
-export default class Intro {
-  static init() {
+const intro = {
+  init() {
     const divIntro = document.createElement('div');
     divIntro.classList.add('intro');
 
@@ -125,5 +125,15 @@ c2.513-1.183,2.621-2.839,2.621-6.74V46.458z"/>
       const menu = new Menu(introTop);
       menu.render();
     });
-  }
-}
+
+    divIntro.addEventListener('click', (event) => {
+      const menu = document.querySelector('.menu');
+      if (event.target.closest('.intro') === divIntro) {
+        menu.classList.add('menu__skip');
+        introCenter.classList.add('intro__skip');
+      }
+    });
+  },
+};
+
+export default intro;

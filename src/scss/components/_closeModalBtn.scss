@@ -1,14 +1,18 @@
 .close-modal-btn {
   @include size(15rem, 5rem);
-  background-color: rgba(141, 137, 137, 0.8);
+  background: rgba(59, 17, 5, 1);
+  border: solid 0.1rem #ee8823;
   border-radius: 1rem;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.5),
+    2px 0 3px 1px rgba(0, 0, 0, 0.5);
+  color: rgb(226, 226, 226);
   font-size: 2rem;
   margin: 1rem;
   padding: 1rem;
   transition: 0.3s linear;
 
   &:hover {
-    background-color: rgba(141, 137, 137, 1);
     transform: scale(1.05);
   }
 }

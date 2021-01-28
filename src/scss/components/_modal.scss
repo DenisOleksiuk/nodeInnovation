@@ -1,9 +1,18 @@
 .modal {
   @include flex(column, center, center);
+  /*
   background: url('../../assets/img/intro/bg-left-top.png') left top no-repeat,
     url('../../assets/img/intro/bg-bottom-right.png') right bottom no-repeat,
     url('../../assets/img/intro/bg.png') left top repeat,
     linear-gradient(181deg, rgba(139, 77, 1, 1) 0%, rgba(55, 16, 0, 1) 100%);
+    */
+  background: rgb(86, 54, 5);
+  background: radial-gradient(
+    circle,
+    rgba(86, 54, 5, 1) 0%,
+    rgba(36, 31, 1, 1) 68%,
+    rgba(9, 11, 0, 1) 100%
+  );
   height: 100vh;
   left: 0;
   opacity: 1;
@@ -27,22 +36,89 @@
     rgba(77, 35, 12, 1) 50%,
     rgba(33, 14, 6, 1) 100%
   );
+  border-radius: 7rem;
+  box-shadow: 0 0 8px 8px rgba(86, 54, 5, 0.7) inset,
+    0 0 8px 8px rgba(86, 54, 5, 0.3);
+  position: relative;
+
+  .modal__overlay {
+    @include block-background-overlay;
+    width: 96%;
+    z-index: 1;
+  }
+
+  .modal__wrapper {
+    @include flex(column, space-around, center);
+    @include size(100%, 100%);
+    @include area-border('../../assets/img/border-modal.png');
+    border-image-width: 6rem;
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .modal__text {
   @include flex(column, center, center);
-  @include size(30rem, 30rem);
-  color: rgb(230, 152, 57);
+  @include size(30rem, 20rem);
+  background: #3b1105;
+  border: solid 0.1rem #ee8823;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.5),
+    2px 0 3px 1px rgba(0, 0, 0, 0.5);
+  color: #13c6ca;
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
+  text-shadow: 1px 2px 3px rgb(0, 0, 0);
 }
 
 .modal__btn {
-  @include size(15rem, 5rem);
-  background-color: rgb(141, 80, 11);
-  color: rgb(230, 152, 57);
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 7.5rem 0;
+  @include size(26.5rem, 8rem);
+  @include flex;
+  background: #3b1105;
+  background: url('../../assets/img/info-table.png');
+  background-size: cover;
+  color: #ffc658;
+  filter: drop-shadow(2px 4px 6px rgb(0, 0, 0));
+  font-family: 'Caesar';
+  font-size: 3rem;
+  font-weight: 100;
+  transition: all 0.5s;
+
+  &:hover {
+    font-size: 3.3rem;
+  }
+}
+
+@keyframes message-error {
+  from {
+    background-color: rgba(224, 35, 35, 0.8);
+  }
+
+  to {
+    background-color: rgba(236, 43, 43, 0);
+  }
+}
+
+.modal__error {
+  align-items: center;
+  animation: 2s linear forwards message-error;
+  background-color: rgb(231, 54, 54);
+  border-radius: 25px;
+  display: flex;
+  font-variant: all-petite-caps;
+  height: 130px;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  z-index: 500;
+}
+
+.error__message {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-align: center;
 }

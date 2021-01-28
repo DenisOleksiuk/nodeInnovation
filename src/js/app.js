@@ -3,19 +3,19 @@ import '../scss/style.scss';
 import '@animxyz/core';
 
 // import js modules
+import intro from './components/Intro';
 import displayPlayerTable from './display/playerTable/displayPlayerTable';
 import setHandControls from './utility/setHandControls';
 import setAsideControls from './utility/setAsideControls';
-import Intro from './components/Intro';
 
+// eslint-disable-next-line no-undef
+const socket = io();
 // display intro & menu
-Intro.init();
+intro.init();
 
-// display game UI
+// load and display base game UI
 document.body.prepend(displayPlayerTable.init());
-
-// add event listeners to hand controls
 setHandControls();
-
-// add event listeners and animations to aside buttons
 setAsideControls();
+
+export default socket;

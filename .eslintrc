@@ -5,12 +5,19 @@
         "browser": true,
         "node": true
     },
+    "parser": "@babel/eslint-parser",
     "rules": {
       "no-param-reassign": "off",
       "prefer-destructuring": "off",
       "linebreak-style": "off",
       "class-methods-use-this": "off",
       "prefer-rest-params": "off",
-      "prefer-default-export": "off"
+      "prefer-default-export": "off",
+      "import/no-cycle": "off",
+      "no-use-before-define": "off",
+      "wrap-iife": "off",
+      "arrow-body-style": "off",
+      "consistent-return": "off",
+      "import/no-named-as-default-export": "off"
     }
 }

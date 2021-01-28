@@ -1,25 +1,51 @@
 .aside {
   @include flex(column, flex-start, center);
-  background: linear-gradient(
-    90deg,
-    rgba(33, 14, 6, 1) 0%,
-    rgba(77, 35, 12, 1) 50%,
-    rgba(33, 14, 6, 1) 100%
-  );
-
-  border: 0.1rem solid transparent;
-  border-image: url('../../assets/img/border.png');
-  border-image-repeat: round;
-  border-image-slice: 47 46 37 46;
-  border-image-width: 2.5rem;
+  background: $tables-bg;
   height: 100vh;
+  padding-top: 2rem;
   position: absolute;
   right: 0;
   top: 0;
   width: 37rem;
+  // z-index: 10;
+
+  .aside__overlay {
+    @include block-background-overlay;
+    margin: 0;
+    top: 0;
+    transform: none;
+    width: 90%;
+  }
+
+  .aside__top {
+    @include area-border('../../assets/img/border-aside-top.png');
+    height: 17rem;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .aside__center {
+    @include area-border('../../assets/img/border-aside-center.png');
+    height: calc(100vh - 44rem); // 44rem = 17rem header + 27rem hand
+    margin: 0;
+    position: absolute;
+    top: 17rem; //17rem header
+    width: 100%;
+  }
+
+  .aside__bottom {
+    @include area-border('../../assets/img/border-aside-bottom.png');
+    height: 27rem;
+    margin: 0;
+    position: absolute;
+    top: calc(100% - 27rem); //27rem hand
+    width: 100%;
+  }
 
   > div {
-    margin: 0.5rem 1rem;
+    margin: 0.5rem;
 
     &:first-child {
       margin-top: 2rem;

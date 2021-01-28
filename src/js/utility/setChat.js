@@ -1,13 +1,15 @@
-export default function setChat() {
-  // eslint-disable-next-line no-undef
-  const socket = io();
+import socket from '../app';
+import gameBoard from '../components/gameBoard';
+import { transform } from '../components/mainMenu';
+import gameState from '../components/gameState';
+import header from '../display/playerTable/displayHeader';
+
+export default function setChat(names) {
   const parent = document.querySelector('.chat-log');
   const messageContainer = parent.querySelector('.chat-block');
   const messageForm = parent.querySelector('.chat-log__form');
   const messageInput = parent.querySelector('.chat-log__input');
   const players = document.querySelectorAll('.head-row__name');
-
-  const userName = prompt('What is your name?');
 
   function appendMessage(message) {
     const messageElement = document.createElement('div');
@@ -20,7 +22,17 @@ export default function setChat() {
   }
 
   appendMessage('You joined');
-  socket.emit('new-user', userName);
+  socket.emit('new-user', names[0]);
+
+  socket.on('get-socket', (state) => {
+    const GS = JSON.parse(state);
+    Object.entries(GS).forEach(([key, value]) => { gameState[key] = value; });
+    transform(gameState);
+    gameBoard.display();
+    gameState.players.forEach((pl) => header.changePlayerStats(pl));
+    gameState.activePlayer.actionPoints += 1;
+    gameBoard.update();
+  });
 
   socket.on('chat-message', (data) => {
     appendMessage(`${data.name}: ${data.message}`);

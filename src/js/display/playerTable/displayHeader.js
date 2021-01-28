@@ -153,37 +153,59 @@ const displayHeader = {
 
     this[player].container.appendChild(recourcesRow);
     this[player].container.classList.add('player-container__hidden');
-    this.wrapper.appendChild(this[player].container);
+    this.headerTableWrapper.appendChild(this[player].container);
   },
 
   changePlayerStats(player) {
     const playerId = `player${player.id}`;
 
     this[playerId].hand.textContent = player.hand.length;
-    this[playerId].red.textContent = player.activeStacks.red.cards.length;
-    this[playerId].green.textContent = player.activeStacks.green.cards.length;
-    this[playerId].blue.textContent = player.activeStacks.blue.cards.length;
-    this[playerId].purple.textContent = player.activeStacks.purple.cards.length;
-    this[playerId].yellow.textContent = player.activeStacks.yellow.cards.length;
+    this[playerId].red.textContent = player.activeDecks.red.cards.length;
+    this[playerId].green.textContent = player.activeDecks.green.cards.length;
+    this[playerId].blue.textContent = player.activeDecks.blue.cards.length;
+    this[playerId].purple.textContent = player.activeDecks.purple.cards.length;
+    this[playerId].yellow.textContent = player.activeDecks.yellow.cards.length;
     this[playerId].tree.textContent = player.tree;
     this[playerId].tower.textContent = player.tower;
     this[playerId].crown.textContent = player.crown;
     this[playerId].bulb.textContent = player.bulb;
     this[playerId].factory.textContent = player.factory;
     this[playerId].clock.textContent = player.clock;
+    this[playerId].influence.textContent = player.influence.points;
+    this[playerId].leadership.textContent = player.specialCards.length
+      + player.leadershipCards.length;
   },
 
   initPlayerNames(players) {
     for (let i = 0; i < players.length; i += 1) {
       const currentPlayer = `player${i}`;
-      this[currentPlayer].name.textContent = players[i].name;
+      this[currentPlayer].name.textContent = players[i];
       this[currentPlayer].container.classList.remove('player-container__hidden');
+
+      const influenceBlocks = document.querySelectorAll('.fa-shield-alt');
+      influenceBlocks[i].parentElement.dataset.innovation = `influence${i}`;
     }
   },
 
   init() {
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add('header');
+
+    this.headerTitle = document.createElement('div');
+    this.headerTitle.classList.add('header__title');
+    this.wrapper.appendChild(this.headerTitle);
+
+    this.headerOverlay = document.createElement('div');
+    this.headerOverlay.classList.add('header__overlay');
+    this.wrapper.appendChild(this.headerOverlay);
+
+    this.headerTable = document.createElement('div');
+    this.headerTable.classList.add('header__table');
+    this.headerTableWrapper = document.createElement('div');
+    this.headerTableWrapper.classList.add('header__table__wrapper');
+    this.headerTable.appendChild(this.headerTableWrapper);
+    this.wrapper.appendChild(this.headerTable);
+
     this.initPlayerStats(0);
     this.initPlayerStats(1);
     this.initPlayerStats(2);

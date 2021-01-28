@@ -1,9 +1,18 @@
+import getSpecCardObject from '../../specCards/getSpecCardObject';
+import getSpecCardElement from '../../specCards/getSpecCardElement';
+
 const displayAside = {
   wrapper: null,
   init() {
     // create aside wrapper
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add('aside');
+
+    // append block for style aside backgroung and border
+    this.wrapper.append(this.getStyleBlock('overlay'));
+    this.wrapper.append(this.getStyleBlock('top'));
+    this.wrapper.append(this.getStyleBlock('center'));
+    this.wrapper.append(this.getStyleBlock('bottom'));
 
     // append createand blocks to aside wrapper
     this.wrapper.append(this.getInfoBlock());
@@ -22,6 +31,12 @@ const displayAside = {
     document.body.append(this.specialCardsBlock);
 
     return this.wrapper;
+  },
+
+  getStyleBlock(name) {
+    const block = document.createElement('div');
+    block.classList.add(`aside__${name}`);
+    return block;
   },
 
   getInfoBlock() {
@@ -103,7 +118,7 @@ const displayAside = {
 
     const specialCardsTitle = document.createElement('div');
     specialCardsTitle.classList.add('extra-cards__special-title');
-    specialCardsTitle.innerText = 'Специальные';
+    specialCardsTitle.innerText = '5 карт';
 
     const specialCardsCards = document.createElement('div');
     specialCardsCards.classList.add('extra-cards__special-cards');
@@ -127,7 +142,7 @@ const displayAside = {
 
     const leadershipCardsTitle = document.createElement('div');
     leadershipCardsTitle.classList.add('extra-cards__leadership-title');
-    leadershipCardsTitle.innerText = 'Лидерство';
+    leadershipCardsTitle.innerText = 'Век 1';
 
     const leadershipCardsCards = document.createElement('div');
     leadershipCardsCards.classList.add('extra-cards__leadership-cards');
@@ -220,11 +235,12 @@ const displayAside = {
     for (let i = 0; i < agesNumber; i += 1) {
       const deck = document.createElement('div');
       deck.classList.add('age-deck');
-      deck.id = `age${i + 1}`; // id age1-10 for each deck
-      deck.innerText = `${i + 1} Age`; // TODO remove later
-      deck.style.backgroundImage = 'url(./assets/img/cards-bg/age-01.jpg)'; //! use `` age-0${i+1} later
-
-      deck.addEventListener('click', () => this.ageDecksBlock.classList.toggle('age-decks--hidden'));
+      deck.id = `age${i + 1}`;
+      if (i < 9) {
+        deck.style.backgroundImage = `url(./assets/img/cards-bg/age-0${i + 1}-title.png)`;
+      } else if (i === 9) {
+        deck.style.backgroundImage = 'url(./assets/img/cards-bg/age-10-title.png)';
+      }
 
       // Animation classes and attributes for cards here
       deck.classList.add('xyz-in');
@@ -279,7 +295,13 @@ const displayAside = {
     for (let i = 0; i < numOfLeadershipCards; i += 1) {
       const leadershipCard = document.createElement('div');
       leadershipCard.classList.add('leadership-cards__card');
-      leadershipCard.innerText = `${i + 1}`;
+      // leadershipCard.innerText = `${i + 1}`;
+
+      const leadershipCardsTitle = document.createElement('div');
+      leadershipCardsTitle.classList.add('extra-cards__leadership-title');
+      leadershipCardsTitle.innerText = `Век ${i + 1}`;
+
+      leadershipCard.append(leadershipCardsTitle);
 
       // Animation classes and attributes for cards here
       leadershipCard.classList.add('xyz-in');
@@ -326,9 +348,9 @@ const displayAside = {
 
     // create special cards
     const numOfSpecialCards = 5;
+    const arrSpecCards = getSpecCardObject.all();
     for (let i = 0; i < numOfSpecialCards; i += 1) {
-      const specialCard = document.createElement('div');
-      specialCard.classList.add('special-cards__card');
+      const specialCard = getSpecCardElement(arrSpecCards[i]);
 
       // Animation classes and attributes for cards here
       specialCard.classList.add('xyz-in');

@@ -1,3 +1,89 @@
+.card__dogms-block {
+  @include flex(column, flex-start, flex-start);
+  max-height: 11.5rem;
+  overflow: auto;
+
+  .card__color--yellow-transparent & {
+    &::-webkit-scrollbar-track {
+      background: #fff568;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(255, 230, 0);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(255, 196, 0);
+    }
+  }
+
+  .card__color--red-transparent & {
+    &::-webkit-scrollbar-track {
+      background: #f58989;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(253, 57, 43);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #fa270b;
+    }
+  }
+
+  .card__color--blue-transparent & {
+    &::-webkit-scrollbar-track {
+      background: #8f8dfd;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(81, 52, 241);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(64, 20, 184);
+    }
+  }
+
+  .card__color--purple-transparent & {
+    &::-webkit-scrollbar-track {
+      background: #e074fc;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(233, 42, 233);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(243, 12, 193);
+    }
+  }
+
+  .card__color--green-transparent & {
+    &::-webkit-scrollbar-track {
+      background: #80ff86;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(0, 161, 22);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(59, 255, 68);
+    }
+  }
+}
+
 .example_cards {
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +118,7 @@ b {
       border-radius: 5rem;
       display: flex;
       font-size: 3rem;
-      font-weight: 70rem;
+      font-weight: 700; // font-weight does not use REM units
       height: 6rem;
       justify-content: center;
       margin-left: -1rem;
@@ -46,7 +132,7 @@ b {
     .card-header__title {
       color: #fff;
       font-size: 1.6rem;
-      font-weight: 60rem;
+      font-weight: 600; // font-weight does not use REM units
       padding: 0.5rem;
       text-align: right;
       text-shadow: 0.1rem 0.1rem #000;
@@ -57,9 +143,9 @@ b {
 
   .card__card-main {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     height: calc(100% - 3rem);
-    line-height: 1.3;
+    line-height: 1.35;
     margin-left: calc(100% - 22.7rem);
     padding: 0.5rem;
     z-index: 1;
@@ -85,6 +171,7 @@ b {
 
     .card__dogma {
       display: flex;
+      margin-top: 0.2rem;
 
       &:hover {
         cursor: pointer;
@@ -95,7 +182,7 @@ b {
       }
     }
 
-    .card__dogma[data-dogmatype='corporate'] {
+    .card__dogma[data-type='corporate'] {
       .card__icon::before {
         align-items: center;
         background-image: url('../../assets/img/cards-bg/corporate.png');
@@ -107,7 +194,7 @@ b {
       }
     }
 
-    .card__dogma[data-dogmatype='aggressive'] {
+    .card__dogma[data-type='aggressive'] {
       .card__icon::before {
         align-items: center;
         background-image: url('../../assets/img/cards-bg/aggressive.png');
@@ -212,11 +299,11 @@ b {
 }
 
 .card__icon-color--blue {
-  color: rgb(62, 49, 136);
+  color: rgb(50, 67, 218);
 }
 
 .card__icon-border--blue {
-  border: 0.2rem solid rgb(62, 49, 136) !important;
+  border: 0.2rem solid rgb(50, 67, 218) !important;
   box-shadow: 0 0.1rem 0.3rem #000 !important;
 }
 
@@ -243,4 +330,10 @@ b {
 .card__age--border {
   border: 0.1rem solid #fff;
   box-shadow: 0 0 0.2rem 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.selected__card {
+  border: 0.2rem solid #ee8823;
+  box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.5), 0 0 3px 1px #ee8823;
+  filter: brightness(1.4);
 }

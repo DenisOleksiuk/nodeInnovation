@@ -22,6 +22,9 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('user-disconnected', users[socket.id]);
     delete users[socket.id];
   });
+  socket.on('state', (state) => {
+    socket.broadcast.emit('get-socket', state);
+  });
 });
 
 const PORT = process.env.PORT || 3000;
