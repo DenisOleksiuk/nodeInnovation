@@ -1,3 +1,3 @@
 # Innovation
-Clone of board game Innovation
+**Clone of board game Innovation**
 on development stage
